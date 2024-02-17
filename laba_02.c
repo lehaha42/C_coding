@@ -2,27 +2,34 @@
 #include <stdio.h>;
 
 int main() {
-    double x1, x2, arr[3][3];
+    double x1, x2;
     
-    for (int i = 0; i<3; i++){
-        for (int j = 0; j<3; j++){
+    int N;
+    
+    printf("Vvedite N:");
+    scanf("%d", &N);
+    
+    double arr[N][N];
+    
+    for (int i = 0; i<N; i++){
+        for (int j = 0; j<N; j++){
             printf("Vvedite A[%d][%d]:", i, j);
             scanf("%lf", &arr[i][j]);
         }
     }
     printf("\n");
     
-    for (int i = 0; i<3; i++){
-        for (int j = 0; j<3; j++){
+    for (int i = 0; i<N; i++){
+        for (int j = 0; j<N; j++){
             printf("%3lf ", arr[i][j]);
         }
         printf("\n");
     }
     printf("\n");
     
-    for (int i = 0; i<3; i++){
+    for (int i = 0; i<N; i++){
         x1+=arr[i][i];
-        x2+=arr[i][2-i];
+        x2+=arr[i][N-i-1];
     }
     printf("X1 = %lf\nX2 = %lf\n", x1, x2);
     
