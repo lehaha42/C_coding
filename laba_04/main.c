@@ -10,8 +10,9 @@ int main()
     scanf("%lf", &s2);
     printf("vvedite 3 storonu:");
     scanf("%lf", &s3);
-    if (s1+s2>s3 && s2+s3>s1 && s3+s1>s2){
+    if (valid(s1,s2,s3)){
         printf("perimeter: %lf, area: %lf", perimeter(s1, s2, s3), area(s1, s2, s3));
-    } else printf("invalid vvod");
+    } else 
+        printf("invalid vvod");
     return 0;
 }
