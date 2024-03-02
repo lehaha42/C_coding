@@ -6,7 +6,8 @@
 int main()
 {
     int n;
-    double **arr1, **arr2;
+    char c;
+    double **arr1, **arr2, **ans;
     
     printf("введите N: ");
     scanf("%d", &n);
@@ -16,6 +17,9 @@ int main()
     
     arr2 = (double**)malloc(n*sizeof(double*));
     for (int i = 0; i<n; i++) arr2[i] = (double*)malloc(n*sizeof(double));
+    
+    ans = (double**)malloc(n*sizeof(double*));
+    for (int i = 0; i<n; i++) ans[i] = (double*)malloc(n*sizeof(double));
     
     for (int i = 0; i<n; i++){
         for (int j = 0; j<n; j++){
@@ -31,7 +35,17 @@ int main()
         }
     }
     
+    printf("введите '+', '-' или '*': ");
+    scanf("%c", &c);
     
+    ans = calc(n, arr1, arr2, c);
+    
+    for (int i = 0; i<n; i++){
+        for (int j = 0; j<n; j++){
+            printf("%4lf ", ans[i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }
