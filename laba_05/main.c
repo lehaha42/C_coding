@@ -3,10 +3,9 @@
 #include <stdlib.h>
 #include "func.h"
 
-int main()
-{
+int main(){
     int n;
-    char str[80];
+    char c;
     double **arr1, **arr2, **ans;
     
     printf("введите N: ");
@@ -31,17 +30,16 @@ int main()
             scanf("%lf", &arr2[i][j]);
         }
     }
-    for (int i = 0; i<80; i++) str[i] = 26;
-    printf("введите '+', '-' или '*': ");
-    scanf("%s", str);
     
+    printf("введите '+', '-' или '*': ");
+    scanf(" %c", &c);
     printf("\n");
     
-    ans = calc(n, arr1, arr2, str[0]);
+    ans = calc(n, arr1, arr2, c);
     
     for (int i = 0; i<n; i++){
         for (int j = 0; j<n; j++){
-            printf("%4d ", (int)ans[i][j]);
+            printf("%2d ", (int)ans[i][j]);
         }
         printf("\n");
     }
