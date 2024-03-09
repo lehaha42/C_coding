@@ -6,7 +6,7 @@
 int main()
 {
     int n;
-    char c;
+    char str[80];
     double **arr1, **arr2, **ans;
     
     printf("введите N: ");
@@ -34,15 +34,17 @@ int main()
             scanf("%lf", &arr2[i][j]);
         }
     }
-    
+    for (int i = 0; i<80; i++) str[i] = 26;
     printf("введите '+', '-' или '*': ");
-    scanf("%c", &c);
+    scanf("%s", str);
     
-    ans = calc(n, arr1, arr2, c);
+    printf("\n");
+    
+    ans = calc(n, arr1, arr2, str[0]);
     
     for (int i = 0; i<n; i++){
         for (int j = 0; j<n; j++){
-            printf("%4lf ", ans[i][j]);
+            printf("%4d ", (int)ans[i][j]);
         }
         printf("\n");
     }
