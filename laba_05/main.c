@@ -18,9 +18,6 @@ int main()
     arr2 = (double**)malloc(n*sizeof(double*));
     for (int i = 0; i<n; i++) arr2[i] = (double*)malloc(n*sizeof(double));
     
-    ans = (double**)malloc(n*sizeof(double*));
-    for (int i = 0; i<n; i++) ans[i] = (double*)malloc(n*sizeof(double));
-    
     for (int i = 0; i<n; i++){
         for (int j = 0; j<n; j++){
             printf("введите A[%d][%d]: ", i, j);
