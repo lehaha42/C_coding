@@ -35,11 +35,23 @@ int main(){
         //printf("%d %s %s %s %d %d\n", i, a[i].name, a[i].sname, a[i].pol, a[i].byear, a[i].height);
         i++;
     }
-    int choise = 0;
+    int N = i;
+    int arr[5], choise = 0;
+    for(int i = 0; i<5; i++) arr[i] = 0;
     i = 0;
-    while((choise != -1) || (i<5)){
+    while(((0 <= choise) && (choise <= 4)) || (i<5)){
+        printf("введите 0-4 для выбора колонны для сортировки или -1 для выхода: ");
         scanf("%d", &choise);
+        arr[i] = choise;
         i++;
+    }
+    for(int i = 0; i<N-1; i++){
+        for(int j = 0; j<N-i-1; j++){
+            for(int k = 0; k<5; k++){
+                if(arr[k] == 0) break;
+                if()
+            }
+        }
     }
     
     fclose(fp1);
