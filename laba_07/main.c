@@ -9,7 +9,7 @@ struct humen{
 
 int main(){
     int N = 4;
-    struct humen a[N], b[N];
+    struct humen a[N], b[N], t;
     char name[100], sname[100], pol[10];
     int byear, height;
     for(int i = 0; i<N; i++){
@@ -29,8 +29,19 @@ int main(){
         a[i].byear = byear;
         a[i].height = height;
     }
+    
+    for(int i = 0; i<N; i++) b[i] = a[i];
+    for(int i = 0; i<N-1; i++){
+        for(int j = 0; j<N-i-1; j++){
+            if(b[j].byear < b[j+1].byear){
+                t = b[j+1];
+                b[j+1] = b[j];
+                b[j] = t;
+            }
+        }
+    }
     for(int i = 0; i<N; i++){
-        printf("%d %s %s %s %d %d\n", i, a[i].name, a[i].sname, a[i].pol, a[i].byear, a[i].height);
+        printf("%d %s %s %s %d %d\n", i, b[i].name, b[i].sname, b[i].pol, b[i].byear, b[i].height);
     }
     return 0;
 }
