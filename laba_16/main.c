@@ -1,19 +1,35 @@
-
 #include <stdio.h>
-#define ISBIT(a, n) ((1<<n)&a)?1:0
 
-int popcount(long a){
+int popcount_double(double a){
     int n = 0;
-    for (int i = 0; i<32; i++){
-        n+=ISBIT((long long)a, i);
+    int *p = &a;
+    char s = 0;
+    for(int i = 0; i<8; i++){s = *(&p+i);
+        while(s!=0){
+            s = s&(s-1);
+            n++;
+        }
+    }
+    return n;
+}
+
+
+int popcount_long(long long a){
+    int n = 0;
+    while(a!=0){
+        a = a&(a-1);
+        n++;
     }
     return n;
 }
 
 
 int main(){
-    long a;
-    scanf("%ld", &a);
-    printf(" %d\n", popcount(a));
+    double a;
+    scanf("%lf", &a);
+    printf("%d\n", popcount_double(a));
+    long long b;
+    scanf("%ld", &b);
+    printf("%d\n", popcount_long(b));
     return 0;
 }
