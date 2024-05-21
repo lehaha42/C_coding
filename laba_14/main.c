@@ -6,6 +6,10 @@
 int main(){
     int a = 1, b = 1, c = 0, n = 0;
     scanf("%d", &n);
+    if (n < 3){
+        printf("1");
+        return 0;
+    }
     jmp_buf env = {0};
     int val = setjmp(env);
     c = a + b;
