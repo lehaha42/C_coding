@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdbool.h>
 
 double perimeter(double s1, double s2, double s3){
     return s1 + s2 + s3;
